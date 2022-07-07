@@ -1,37 +1,20 @@
-const sm = document.getElementById('small');
-const md = document.getElementById('medium');
-const bg = document.getElementById('big');
-const a = document.getElementById('a');
+const names = [
+  'Artur',
+  'Bob',
+  'Vlad',
+  'Alex',
+  'Donald',
+  '007',
+  'alexander',
+  'юрій',
+];
 
-const smHandler = (e) => {
-  e.stopPropagation();
-  console.log(e.currentTarget.id);
-};
-const mdHandler = (e) => {
-  e.stopPropagation();
-  console.log(e.currentTarget.id);
-};
-const bigHandler = (e) => {
-  console.log(e.currentTarget.id);
-};
+const numbers = [100, 99, 665, 1000, 2]; // ['007', 'Alex', 'Artur', 'Bob', 'Donald', 'Vlad', 'alexander', 'юрій']
 
-function anchorHandler(e) {
-  console.log('lol');
-  e.preventDefault();
-}
-
-sm.addEventListener('click', smHandler);
-md.addEventListener('click', mdHandler);
-bg.addEventListener('click', bigHandler);
-a.addEventListener('click', anchorHandler);
-
-var isSquare = function (n) {
-  let double = n / 2;
-  if (double * 2 === n) {
-    return true;
-  } else {
-    return false;
-  }
+const compFn = (a, b) => {
+  return a > b ? -1 : 1;
 };
 
-console.log('1');
+console.log(numbers.sort()); // [100, 1000, 2, 665, 99]
+console.log(numbers.sort(compFn)); // [100, 1000, 2, 665, 99]
+console.log(numbers.sort((a, b) => a - b)); // [2, 99, 100, 665, 1000]
