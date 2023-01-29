@@ -1,14 +1,12 @@
-function bmi(weight, height) {
-  const bmi = weight / height ** 2;
-  if (bmi <= 18.5) {
-    return 'Underweight';
-  } else if (bmi <= 25.0) {
-    return 'Normal';
-  } else if (bmi <= 30.0) {
-    return 'Overweight';
-  } else if (bmi < 30) {
-    return 'Obese';
-  }
-}
+function gooseFilter(birds) {
+    let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+    let result = birds
 
-console.log(bmi(80, 1.8));
+    for (let i = geese.length - 1; i >= 0; i--) {
+        result = result.filter(el => el !== geese[i])
+    }
+
+    return result
+};
+
+console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]))
